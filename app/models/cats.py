@@ -5,11 +5,5 @@ class Cat(db.Model):
     name = db.Column(db.String)
     age = db.Column(db.Integer)
     color = db.Column(db.String)
-
-# class Cat:
-#     def __init__(self, id, name, age, color):
-#         self.id = id
-#         self.name = name
-#         self.age = age
-#         self.color = color
-
+    human_id = db.Column(db.Integer, db.ForeignKey('human.id'))
+    human = db.relationship('Human', back_populates='cats')

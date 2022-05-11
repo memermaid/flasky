@@ -1,8 +1,6 @@
-from crypt import methods
 from flask import Blueprint, jsonify, request
 from app.models.cats import Cat
 from app import db
-from sqlalchemy_filters import apply_filters
 
 cats_bp = Blueprint('cats_bp', __name__, url_prefix='/cats')
 
